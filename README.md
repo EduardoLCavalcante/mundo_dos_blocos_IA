@@ -13,37 +13,6 @@ Avaliar desempenho em termos de tempo, número de nós e uso de memória
 
 Produzir um relatório experimental conforme exigido no enunciado acadêmico
 
-📦 Estrutura do Projeto
-blocks-world-planning-IA/
-│
-├── main.py                     # Ponto de entrada do sistema
-├── README.md                   # Documentação do projeto
-│
-├── instances/                  # Arquivos de instância (STRIPS)
-│
-├── src/
-│   ├── domain/
-│   │   ├── state.py             # Representação do estado
-│   │   ├── action.py            # Ações STRIPS
-│   │   ├── node.py              # Nó da busca
-│   │   └── predicate_map.py     # Mapeamento de predicados
-│   │
-│   ├── planner/
-│   │   └── planner.py           # Seleção e execução dos algoritmos
-│   │
-│   ├── search/
-│   │   ├── bfs.py               # Busca em Largura (BFS)
-│   │   ├── dls.py               # Busca em Profundidade Limitada (DLS)
-│   │   ├── ids.py               # Busca em Profundidade Iterativa (IDS)
-│   │   ├── astar.py             # Busca A*
-│   │   └── bidirectional.py     # Busca Bidirecional (bônus)
-│   │
-│   ├── heuristics/
-│   │   └── blocks_heuristic.py  # Heurística do A*
-│   │
-│   └── utils/
-│       └── performance.py       # Coleta de métricas
-
 🧩 Modelagem do Problema
 
 Cada estado é representado como um conjunto de predicados verdadeiros
@@ -137,26 +106,26 @@ ASTAR
 
 BIDIR
 
-📄 Saída Esperada
+## 📄 Saída Esperada
+
+Ao executar o algoritmo A* na instância 4-0, o sistema apresentará o seguinte relatório técnico:
+
+```text
+>>> RELATÓRIO DE PLANEJAMENTO: ASTAR <<<
+--------------------------------------------------
+Problema            : 4-0
+Ações Carregadas    : 12
+Duração             : 0.0045 segundos
+Estados Visitados   : 42
+Fronteira (Explored): 18
+Memória de Pico     : 112.40 KB
+--------------------------------------------------
+SUCESSO: Plano encontrado com 6 movimentos
+SEQÜÊNCIA DE OPERAÇÕES:
+  pick-up_b -> stack_b_a -> pick-up_c -> stack_c_b -> pick-up_d -> stack_d_c
+--------------------------------------------------
 ============================================================
-                     Execution summary
-============================================================
-Algorithm         : BFS
-Instance          : 4-0
-Time elapsed      : 0.009520 s
-Expanded nodes    : 269
-Explored nodes    : 122
-Total memory cost : 5.72 KB
-Memory usage      : current=22.74 KB; peak=90.75 KB
-------------------------------------------------------------
-Solution (6 steps):
-   1. pick-up_b
-   2. stack_b_a
-   3. pick-up_c
-   4. stack_c_b
-   5. pick-up_d
-   6. stack_d_c
-============================================================
+```
 
 📚 Considerações Finais
 
