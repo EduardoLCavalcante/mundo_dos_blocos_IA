@@ -30,12 +30,12 @@ def main():
 
     planner = Planner(initial_state, goal, actions)
 
-# ... código anterior ...
+
 
     with Performance() as perf:
         plan = planner.solve(algorithm, perf)
 
-    # Nova estética para o output
+    
     print(f"\n>>> RELATÓRIO DE PLANEJAMENTO: {algorithm.upper()} <<<")
     print("-" * 50)
     
